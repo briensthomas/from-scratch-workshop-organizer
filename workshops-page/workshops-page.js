@@ -4,10 +4,13 @@ import { renderWorkshop } from '../render-utils.js';
 checkAuth();
 
 const logoutButton = document.getElementById('logout');
+const addParticipantButton = document.getElementById('add-participant');
 
 logoutButton.addEventListener('click', () => {
     logout();
 });
+
+
 
 async function displayWorkshops() {
     const main = document.querySelector('main');
@@ -31,3 +34,7 @@ async function displayWorkshops() {
 }
 
 displayWorkshops();
+
+addParticipantButton.addEventListener('click', () => {
+    window.location.href = '../add-participants';
+});
