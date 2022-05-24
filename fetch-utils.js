@@ -58,3 +58,12 @@ export async function addParticipant(participant) {
         return response.data;
     }
 }
+
+export async function deleteParticipant(id){
+    const response = await client.from('Participants').delete().eq('id', id);
+    if (response.error) {
+        console.error(response.error.message);
+    } else {
+        return response.data;
+    }
+}
