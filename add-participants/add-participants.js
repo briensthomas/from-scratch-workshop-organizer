@@ -12,3 +12,14 @@ async function onLoad() {
     }
 }
 onLoad();
+
+addParticipantForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(addParticipantForm);
+    await addParticipant({
+        name: data.get('name'),
+        contact: data.get('contact'),
+        workshop_id: data.get('workshop_id')
+    });
+    window.location.href = '../workshops-page';
+});
