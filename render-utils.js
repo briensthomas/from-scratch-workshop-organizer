@@ -8,3 +8,10 @@ export function renderWorkshop(workshop) {
     workshopDiv.append(workshopTitle);
     return workshopDiv;
 }
+
+export function renderSelectOptions(workshop) {
+    const option = document.createElement('option');
+    option.value = workshop.id;
+    option.textContent = workshop.name;
+    return option;
+}

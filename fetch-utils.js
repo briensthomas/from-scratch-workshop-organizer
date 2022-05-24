@@ -49,3 +49,12 @@ export async function getWorkshops() {
         return response.data;
     }
 }
+
+export async function addParticipant(participant) {
+    const response = await client.from('Participants').insert(participant);
+    if (response.error) {
+        console.error(response.error.message);
+    } else {
+        return response.data;
+    }
+}
