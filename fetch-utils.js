@@ -1,5 +1,5 @@
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
+const SUPABASE_URL = 'https://plkemcgrxzmmcpdtjfif.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsa2VtY2dyeHptbWNwZHRqZmlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTIyOTcxOTYsImV4cCI6MTk2Nzg3MzE5Nn0.kfBRa_T42tBk603NpWRP4Wq03rowUysjlQ_fwhXu6Jw';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -15,7 +15,7 @@ export function checkAuth() {
 
 export function redirectIfLoggedIn() {
     if (getUser()) {
-        location.replace('./other-page');
+        location.replace('./workshops-page');
     }
 }
 
@@ -40,3 +40,30 @@ export async function logout() {
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;
 // }
+
+export async function getWorkshops() {
+    const response = await client.from('Workshops').select('*, Participants(*)');
+    if (response.error) {
+        console.error(response.error.message);
+    } else {
+        return response.data;
+    }
+}
+
+export async function addParticipant(participant) {
+    const response = await client.from('Participants').insert(participant);
+    if (response.error) {
+        console.error(response.error.message);
+    } else {
+        return response.data;
+    }
+}
+
+export async function deleteParticipant(id){
+    const response = await client.from('Participants').delete().eq('id', id);
+    if (response.error) {
+        console.error(response.error.message);
+    } else {
+        return response.data;
+    }
+}

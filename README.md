@@ -4,7 +4,48 @@
 
 If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
 
-## Making a plan
+## Community Workshops Project
+
+## Workshops Page
+    
+1. Hardcoding HTML:
+A `<button>` to add participants
+
+2. Render mock-up (Hardcode):
+`<div>` to contain the created elements, `<h3>` For Workshop Title, `<ul>` to hold the list of participants, `<li>` for each participant/contact
+
+3. CSS/Styling: Basic styling to format the page
+
+## Display functionality
+1. Link supabase to `fetch-utils.js`
+
+2. Create a `getWorkshops` function in `fetch-utils.js` to call your database
+
+3. TDD basic `renderFunction` that displays the workshop, and participants attached to that workshop
+
+4. Write a `displayWorkshops` async function that will loop through database rows, and create necessary elements for each workshop
+
+5. `addEventListener` to the add participants `<button>` to redirect to add-participants page
+
+## Add Participants Page
+
+1. Hardcode form in HTML for name, contact info, and `<select>` dropdown for workshops
+
+2. Add `onLoad()` function that calls `getWorkshops` and add options to the dropdown, that sets the value of the option to the row ID, and sets the text content of the option to the name of the Workshop.
+
+3. Add `createParticipant` function in `fetch-utils.js` to add row to supabase table
+
+4. Add form event listener
+
+## Delete Participant
+1. Add `deleteParticipant(id)` function in `fetch-utils.js`
+
+2. Add dynamic event listener to the participant `<li>`, and call `displayWorkshops` to refresh the page
+
+
+
+
+
 
 1. **Make a drawing of your app. Simple "wireframes"**
 1. **Once you have a drawing, name the HTML elements you'll need to realize your vision**

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <link rel="stylesheet" href="./add-participants.css" />
+    <title>Add Participant</title>
+</head>
+<body>
+    <h2>Add New Participant</h2>
+    <form id="participant-form">
+        <label for="name"> Name:
+            <input type="text" name="name">
+        </label>
+        <label for="contact"> Contact:
+            <input type="text" name="contact">
+        </label>
+        <select name="workshop_id" id="select-workshops">
+        </select>
+        <button>Submit</button>
+    </form>
+    <script src="./add-participants.js" type="module"></script>
+</body>
+</html>
