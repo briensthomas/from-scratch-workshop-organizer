@@ -21,6 +21,7 @@ main {
 .workshops li {
     list-style: none;
     width: fit-content;
+    height: max-content;
     margin: 3px;
     display: flex;
     flex-direction: row;
