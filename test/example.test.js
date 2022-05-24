@@ -14,7 +14,7 @@ test('time to test a function', (expect) => {
     // Call the function you're testing and set the result to a const
     const actual = renderWorkshop({
         id: 1,
-        course_name: 'Workshop Title',
+        name: 'Workshop Title',
     });
 
     //Expect

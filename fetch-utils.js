@@ -40,3 +40,12 @@ export async function logout() {
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;
 // }
+
+export async function getWorkshops() {
+    const response = await client.from('Workshops').select('*, Participants(*)');
+    if (response.error) {
+        console.error(response.error.message);
+    } else {
+        return response.data;
+    }
+}

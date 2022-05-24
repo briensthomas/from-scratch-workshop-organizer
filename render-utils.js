@@ -3,7 +3,7 @@ export function renderWorkshop(workshop) {
     workshopDiv.classList.add('workshops');
 
     const workshopTitle = document.createElement('h2');
-    workshopTitle.textContent = workshop.course_name;
+    workshopTitle.textContent = workshop.name;
 
     workshopDiv.append(workshopTitle);
     return workshopDiv;
